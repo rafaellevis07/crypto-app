@@ -3,7 +3,7 @@ import React, { useState, useEffect, createContext } from "react";
 const getInitialTheme = () => {
   if (typeof window !== "undefined" && window.localStorage) {
     const storedPrefs = window.localStorage.getItem("color-theme");
-    if (typeof sotredPrefs === "string") {
+    if (typeof storedPrefs === "string") {
       return storedPrefs;
     }
 
@@ -29,6 +29,7 @@ export const ThemeProvider = ({ initialTheme, children }) => {
 
     localStorage.setItem("color-theme", theme);
   };
+
   if (initialTheme) {
     rawSetTheme(initialTheme);
   }
