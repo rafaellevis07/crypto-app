@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
@@ -19,7 +18,7 @@ module.exports = {
         primary: "var(--color-bg-primary)",
         secondary: "var(--color-bg-secondary)",
         input: "var(--color-bg-input)",
-        accent: "var(--color-bg-accent)",
+        accent: "var(--color-text-accent)",
       },
     },
   },
