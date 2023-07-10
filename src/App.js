@@ -8,7 +8,7 @@ import SignUp from "./routes/SignUp";
 import Account from "./routes/Account";
 import axios from "axios";
 
-function App() {
+const App = () => {
   const [coins, setCoins] = useState([]);
 
   // Store API link as string into a variable
@@ -34,6 +34,6 @@ function App() {
       </Routes>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import CoinItem from "./CoinItem";
 
 const CoinSearch = ({ coins }) => {
+  const [searchText, setSearchText] = useState("");
   //   console.log(coins);
   return (
     <div>
       <div>
         <h1>Search Crypto</h1>
         <form>
-          <input type="text" placeholder="Search a coin" />
+          <input
+            onChange={(e) => setSearchText(e.target.value)}
+            type="text"
+            placeholder="Search a coin"
+          />
         </form>
       </div>
 
@@ -23,13 +28,26 @@ const CoinSearch = ({ coins }) => {
             <th>24h</th>
             <th>24h Volume</th>
             <th>Mkt</th>
-            <th>Lasr 7 Days</th>
+            <th>Last 7 Days</th>
           </tr>
         </thead>
         <tbody>
-          {coins.map((coin) => (
-            <CoinItem key={coin.id} coin={coin} />
-          ))}
+          {coins
+            // Filter for the search coin engine
+            .filter((value) => {
+              if (searchText === "") {
+                return value;
+              } else if (
+                value.name.toLowerCase().includes(searchText.toLowerCase())
+              ) {
+                return value;
+              }
+            })
+
+            // map to display and list all coins in CoinItem
+            .map((coin) => (
+              <CoinItem key={coin.id} coin={coin} />
+            ))}
         </tbody>
       </table>
     </div>

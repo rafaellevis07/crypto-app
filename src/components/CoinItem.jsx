@@ -11,8 +11,8 @@ const CoinItem = ({ coin }) => {
       <td>{coin.market_cap_rank}</td>
       <td>
         <div>
-          <img src={coin.image} alt={coin.id} />
           {/* alt -> Dynamic alt tag to images */}
+          <img src={coin.image} alt={coin.id} />
           <p>{coin.name}</p>
         </div>
       </td>
