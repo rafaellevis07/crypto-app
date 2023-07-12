@@ -3,12 +3,16 @@ import axios from "axios";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import DOMPurify from "dompurify";
+import { useParams } from "react-router-dom";
 
 const CoinPage = () => {
   const [coin, setCoin] = useState({});
+  // Use params for Dynamic Pages
+  const params = useParams();
 
   const url =
-    "https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&sparkline=true";
+    // change quotes for backticks for a template literal
+    `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false&sparkline=true`;
 
   useEffect(
     () => {

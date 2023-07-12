@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 
 const CoinItem = ({ coin }) => {
@@ -10,16 +11,19 @@ const CoinItem = ({ coin }) => {
       </td>
       <td>{coin.market_cap_rank}</td>
       <td>
-        <div className="flex items-center">
-          <img
-            // w-6 is the size of the images
-            className="w-6 mr-2 rounded-full"
-            src={coin.image}
-            // Dynamic alt tag to images
-            alt={coin.id}
-          />
-          <p className="hidden sm:table-cell">{coin.name}</p>
-        </div>
+        {/* The javascript expression turns the URL Dynamic */}
+        <Link to={`/coin/${coin.id}`}>
+          <div className="flex items-center">
+            <img
+              // w-6 is the size of the images
+              className="w-6 mr-2 rounded-full"
+              src={coin.image}
+              // Dynamic alt tag to images
+              alt={coin.id}
+            />
+            <p className="hidden sm:table-cell">{coin.name}</p>
+          </div>
+        </Link>
       </td>
       <td>{coin.symbol.toUpperCase()}</td>
       <td>${coin.current_price.toLocaleString()}</td>
