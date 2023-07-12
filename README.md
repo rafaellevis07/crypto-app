@@ -23,6 +23,7 @@ Final project for the Little Lemon Restaurant, which contains a detailed and res
 
 - react-router-dom
 - react-sparklines
+- dompurify
 - Coingecko API
 
 ### Install and Run:
