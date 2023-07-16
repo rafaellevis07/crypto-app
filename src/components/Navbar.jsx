@@ -19,6 +19,7 @@ const Navbar = () => {
     }
   };
 
+  // Sets navbar as false, taking the navbar away when used.
   const handleNav = () => {
     setNav(!nav);
   };
@@ -33,7 +34,7 @@ const Navbar = () => {
       </div>
 
       {user?.email ? (
-        <div>
+        <div className="hidden md:block">
           <Link to="/account" className="p-4">
             Account
           </Link>
@@ -79,18 +80,31 @@ const Navbar = () => {
             <ThemeToggle />
           </li>
         </ul>
-        <div className="flex flex-col w-full p-4 font-light">
-          <Link onClick={handleNav} to="/signin">
-            <button className="w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl">
-              Sign In
-            </button>
-          </Link>
-          <Link onClick={handleNav} to="/signup">
-            <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadown-xl">
-              Sign Up
-            </button>
-          </Link>
-        </div>
+        {user?.email ? (
+          <div className="flex flex-col w-full p-4 font-light">
+            <Link onClick={handleNav} to="/ ">
+              <button
+                onClick={handleSignOut}
+                className="w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl"
+              >
+                Sign Out
+              </button>
+            </Link>
+          </div>
+        ) : (
+          <div className="flex flex-col w-full p-4 font-light">
+            <Link onClick={handleNav} to="/signin">
+              <button className="w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl">
+                Sign In
+              </button>
+            </Link>
+            <Link onClick={handleNav} to="/signup">
+              <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadown-xl">
+                Sign Up
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
