@@ -43,7 +43,7 @@ export const AuthContextProvider = ({ children }) => {
     return () => {
       unsubscribe();
     };
-  }, []); /* Add dependency array to run only once*/
+  }, []); /* Add dependency array to run only once */
 
   return (
     <UserContext.Provider value={{ signUp, signIn, logout, user }}>
