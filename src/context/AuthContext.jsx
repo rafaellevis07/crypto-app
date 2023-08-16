@@ -16,7 +16,7 @@ export const AuthContextProvider = ({ children }) => {
 
   // Sign Up as new user with email and password
   const signUp = (email, password) => {
-    //Signs up a new user automatically creates a database in the firestore
+    // Signs up a new user automatically creates a database in the firestore
     createUserWithEmailAndPassword(auth, email, password);
     // Creates new user
     return setDoc(doc(db, "users", email), {
