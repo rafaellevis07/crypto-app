@@ -19,7 +19,7 @@ const Navbar = () => {
     }
   };
 
-  // Sets navbar as false, taking the navbar away when used.
+  // Sets navbar as false, taking the navbar away when used
   const handleNav = () => {
     setNav(!nav);
   };
