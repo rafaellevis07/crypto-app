@@ -1,6 +1,6 @@
 # Crypto
 
-Final project for the Little Lemon Restaurant, which contains a detailed and responsive website with table-booking functionality built using React.
+Final Project using API from Coingecko and Firebase database and authentication
 
 ## Screenshot
 
