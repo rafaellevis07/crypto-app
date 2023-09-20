@@ -1,4 +1,4 @@
-# Little Lemon Restaurant
+# Crypto
 
 Final project for the Little Lemon Restaurant, which contains a detailed and responsive website with table-booking functionality built using React.
 
