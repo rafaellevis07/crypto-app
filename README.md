@@ -2,16 +2,6 @@
 
 Final Project using API from Coingecko and Firebase database and authentication
 
-## Screenshot
-
-### Home Page
-
-![Screenshot](./homepage.png)
-
-### Booking Page
-
-![Screenshot](./reservation.png)
-
 ### Tech Stack:
 
 - HTML
@@ -28,7 +18,7 @@ Final Project using API from Coingecko and Firebase database and authentication
 
 ### Install and Run:
 
-- Run 'npm start' on the reserve-a-table folder
+- Run 'npm start' on the crypto-app folder folder
 
 ### Author
 
